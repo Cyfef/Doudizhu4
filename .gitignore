@@ -1,0 +1,4 @@
+server/history/
+server/data/
+.migration-backup-*/
+*.pyc

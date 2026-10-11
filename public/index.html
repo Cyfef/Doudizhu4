@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="ds9Z6pYwlHIBGA5hwjUjIG">
+<head data-page-node-id="MiBMNsFP6dadDIhBCs8l2u">
+  <meta charset="UTF-8" data-page-node-id="9X1tgyyfDP8cFUlVpfqQQW" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" data-page-node-id="6FpQceKvkmePQnWEOBqOQm" />
+  <meta name="screen-orientation" content="landscape" />
+  <meta name="x5-orientation" content="landscape" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#d6ecfa" />
+  <link rel="manifest" href="manifest.json" />
+  <title>欢乐四人斗地主（两副牌）</title>
+  <link rel="stylesheet" href="style.css" data-page-node-id="euWuqaH6UBnsT8kVZxCJeO" />
+</head>
+<body data-page-node-id="MPRna4ETBgxyJ5O0q3v2Ne">
+  <!-- 首页 -->
+  <div id="home" class="screen" data-page-node-id="gOHwRKTJwqJF1ieODhCTtj">
+    <div class="home-card" data-page-node-id="4UElvGTJyzGw9T10XQ64PA">
+      <h1 data-page-node-id="Ztrg9eIijx5rQAd5JhKQXE">欢乐四人斗地主</h1>
+      <p class="subtitle" data-page-node-id="PKmJeQLNdQMoM7d2GvTpzB">两副牌 · 4 人房间 · 单局积分不封顶 · 仅限同一局域网</p>
+      <div class="field" data-page-node-id="5PRAtmZW5QVslTwcSTdkvz">
+        <label data-page-node-id="WgkZ1Su0JwKShAQcfFNE1y">房间昵称（本房间内唯一）</label>
+        <input id="nick" maxlength="12" placeholder="输入你的昵称" data-page-node-id="6DlCuSRKVnJR3PJGZ8u9HJ" />
+      </div>
+      <div class="home-btns" data-page-node-id="7J87MUriKxNEULcY97lnNg">
+        <button id="btnShowCreate" class="primary" data-page-node-id="vjpaLeGD4fNbkEMdbPAXY6">创建房间</button>
+        <button id="btnShowJoin" data-page-node-id="fTTKJEfRoZ85v5IIwGZund">加入房间</button>
+      </div>
+
+      <div id="createPanel" class="panel hidden" data-page-node-id="pkQvPkA4fe3OfZbO207mid">
+        <h3 data-page-node-id="3gf4CJFeQBxd4SlkkLGVEi">创建房间</h3>
+        <div class="field" data-page-node-id="H0eJvpAUuk2hsXP5XeG4Zr"><label data-page-node-id="hOBExGbGqyfZKAoj4Om4Ks">房间名称</label><input id="cr_name" maxlength="20" placeholder="我的房间" data-page-node-id="JyCFLxxT2ny7Di5cEV8USh" /></div>
+        <div class="field" data-page-node-id="4jSwmS6qupuFFF7K7pzX7H"><label data-page-node-id="47OzjghDn1MeWKKa3U6kuX">底分</label><input id="cr_base" type="number" min="1" value="1" data-page-node-id="xLo3ZAmqO85Mb5y6Zo9dj1" /></div>
+        <div class="field" data-page-node-id="gHRM6BLHok3VqH6SMmsiUu"><label data-page-node-id="6hu93aTip8lVtGjWty8Oua">总局数（1–50）</label><input id="cr_rounds" type="number" min="1" max="50" value="5" data-page-node-id="vFGpBUZWFyW32qtb1SM8Ug" /></div>
+        <div class="field" data-page-node-id="T58yTZARAjuNUTBxfyS4EZ"><label data-page-node-id="4DEtGJ0fukdIfSf9zmTtlw">出牌倒计时（5–60 秒）</label><input id="cr_timeout" type="number" min="5" max="60" value="15" data-page-node-id="FmnQFosPD8RyCtVUCsob2G" /></div>
+        <div class="field" data-page-node-id="sz3ccmpTCZgFDBJbaiDaXY"><label data-page-node-id="jE1yqHncRTBNAl1Brc4GDI">房间密码（可选）</label><input id="cr_pwd" maxlength="20" placeholder="留空则无密码" data-page-node-id="pC0hyWtXbXhoyURUtwGZiq" /></div>
+        <div class="checks" data-page-node-id="qZjrJaRT0CktAEFwHpDARH">
+          <label data-page-node-id="KC29NyHYPa49hqDEsgzUG0"><input id="cr_reveal" type="checkbox" checked data-page-node-id="ZhtW1849ukTBN47yBSZmFb" /> 允许明牌</label>
+          <label data-page-node-id="JcCcdqAx4VRHzN7Jg89UIB"><input id="cr_double" type="checkbox" checked data-page-node-id="DtaOh5jpdLpMiGkXqizckD" /> 允许加倍/超级加倍</label>
+        </div>
+        <button id="btnCreate" class="primary" data-page-node-id="cjukj0tHkmdswCZFj1y6v3">确认创建</button>
+        <button id="btnBack1" data-page-node-id="BXyAGJgvrJoKHkhyucw665">返回</button>
+      </div>
+
+      <div id="joinPanel" class="panel hidden" data-page-node-id="Ev4QxromkJYwlGD2X9DK37">
+        <h3 data-page-node-id="F1fuI3PemxWdSKTeKNPPCK">加入房间</h3>
+        <div class="field" data-page-node-id="EsZDeV9CWzQGhXXptngrLR"><label data-page-node-id="UNttStQC7roc3TVx8mAHMV">房间号（6 位）</label><input id="jn_room" maxlength="6" placeholder="如 123456" data-page-node-id="4pLCy90HMFTgGXNxgfuBrQ" /></div>
+        <div class="field" data-page-node-id="cz9pQbWrEoSBfz8t2Ik7up"><label data-page-node-id="UTvuqpCHdvRGyHLhgqfWD7">房间密码（若有）</label><input id="jn_pwd" maxlength="20" placeholder="留空若无密码" data-page-node-id="Izb8drqqNYp3xZmC7T9VhA" /></div>
+        <button id="btnJoin" class="primary" data-page-node-id="dF1zBE0Kc2nqg27ueAPtKX">确认加入</button>
+        <button id="btnBack2" data-page-node-id="JBPPSUAkmgVOpDLLW7SHAK">返回</button>
+      </div>
+
+      <div id="homeMsg" class="msg" data-page-node-id="A8oPUeeAbNaCBPFX1Vh0Kk"></div>
+    </div>
+  </div>
+
+  <!-- 房间等待 -->
+  <div id="room" class="screen hidden" data-page-node-id="g1fvrkR7XodShSyyPBn32C">
+    <div class="room-wrap" data-page-node-id="lDSKfTuSYE3JMXN7cnIUAF">
+      <div class="room-head" data-page-node-id="Yih3PLLg9mZf99ZWYQvpyI">
+        <span id="roomTitle" data-page-node-id="iFVnFVPWhjMwAxHGRQcy8v"></span>
+        <span id="roomCfg" data-page-node-id="D8Tsv2IkdFxxvavjRBSJAF"></span>
+        <button id="btnRoomSettings2" class="tb-settings hidden" title="房间设置">⚙️ 房间设置</button>
+        <button id="btnInvite2" class="tb-invite" title="复制邀请信息（含加入链接）">📨 邀请好友</button>
+        <button id="btnLb2" data-page-node-id="zQvf7EBaYj5HRDB4MRDV7W">排行榜</button>
+        <button id="btnLeaveRoom" data-page-node-id="FBBlNL2BPYuQAWygtuei9t">退出房间</button>
+      </div>
+      <div id="seatList" class="seat-list" data-page-node-id="iujZlmov4Ig77199zz9wqV"></div>
+      <div class="room-actions" id="roomActions" data-page-node-id="ASJ3QFGFNoDAgFoHznsBdo"></div>
+      <div id="roomMsg" class="msg" data-page-node-id="glwqFv8XTzxsoDMtsbpFiV"></div>
+    </div>
+  </div>
+
+  <!-- 牌桌 -->
+  <div id="game" class="screen hidden" data-page-node-id="47XAGywg04JAEnpTOgAmVt">
+    <div class="topbar" data-page-node-id="dBHfe4d0YvPbVi9TmVOGxg">
+      <div class="bottom-zone" id="bottomZone" data-page-node-id="bz01">
+        <div class="bottom-zone-label">底牌</div>
+        <div id="bottomCards" class="bottom-cards" data-page-node-id="1zwOHf5sIXrWzDPUDDWDbI"></div>
+      </div>
+
+      <!-- 房间 / 局数 / 倍数：卡片式信息胶囊 -->
+      <div class="tb-chips">
+        <div class="chip chip-room" title="房间名称与房间号">
+          <span class="chip-ico">🏠</span>
+          <span class="chip-txt" id="roomInfo" data-page-node-id="hWPw4NWf4AcIb6LyCBekD0"></span>
+        </div>
+        <div class="chip chip-round" title="当前进度">
+          <span class="chip-ico">🎯</span>
+          <span class="chip-txt" id="roundInfo" data-page-node-id="qdaxrZdmgnqc3EvVJX1AJx"></span>
+        </div>
+        <div class="chip chip-mult mult" title="当前倍数明细">
+          <span class="chip-ico">✨</span>
+          <span class="chip-txt" id="multInfo" data-page-node-id="AC95IWHjm9K1Hs2HgVzuYv"></span>
+        </div>
+      </div>
+
+      <span class="spacer" data-page-node-id="LsPBbzDWjPoG8KaDHszhDw"></span>
+      <button id="btnRoomSettings" class="tb-btn tb-settings hidden" title="房间设置">⚙️<span>房间设置</span></button>
+      <button id="btnAutoPlay" class="tb-btn tb-autoplay" title="开启托管，由 AI 自动操作">🤖<span>托管</span></button>
+      <button id="btnInvite" class="tb-btn tb-invite" title="复制邀请信息（含加入链接）">📨<span>邀请</span></button>
+      <button id="btnRules" class="tb-btn tb-rules" title="查看玩法规则">📖<span>规则</span></button>
+      <button id="btnFullscreen" class="tb-btn tb-fullscreen" title="进入或退出全屏">⛶<span>全屏</span></button>
+      <button id="btnAudio" class="tb-btn" title="声音设置">🔊</button>
+      <button id="btnLb" class="tb-btn" title="排行榜">🏆</button>
+      <button id="btnLeaveGame" class="tb-btn tb-danger" title="退出房间" data-page-node-id="i337ZnlbNOeilvBCjkz8pl">退出</button>
+
+      <!-- 声音设置（仅顶部 🔊 按钮打开，只含声音相关控制；贴着顶部栏下方展开） -->
+      <div id="audioPanel" class="interact-panel audio-panel hidden">
+        <div class="ip-head"><b>声音设置</b><button id="apClose" class="ip-x">✕</button></div>
+        <div class="ip-sec">
+          <div class="ip-vol"><span class="ip-vlabel">音效音量</span><input id="volSfx" type="range" min="0" max="100" step="1" /><span class="ip-vval" id="volSfxVal">90</span></div>
+          <div class="ip-vol"><span class="ip-vlabel">背景音乐</span><input id="volBgm" type="range" min="0" max="100" step="1" /><span class="ip-vval" id="volBgmVal">55</span></div>
+          <label class="ip-check"><input id="chkAnnounce" type="checkbox" checked /> 语音播报（出牌/叫分/加倍/过牌/道具，各玩家口音随机）</label>
+        </div>
+        <div class="ip-sec">
+          <div class="ip-title">发声自检（换设备/手机没声音时看这里）</div>
+          <div id="voiceDiag" class="ip-diag"></div>
+          <div class="ip-diag-btns">
+            <button id="btnTestVoice" type="button">🔈 试听一句</button>
+            <button id="btnRefreshVoice" type="button">↻ 重新检测</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table" data-page-node-id="CGFFTcfNWSZLsbYx4tz9Bk">
+      <div class="seat seat-top" data-pos="top" data-page-node-id="GYPdQ4l4WbmvB8ilEBNoJy"></div>
+      <div class="seat seat-left" data-pos="left" data-page-node-id="jDDeohfejADAGNJWwt6HOU"></div>
+      <div class="seat seat-right" data-pos="right" data-page-node-id="VI1t4F3vvTN1BzrBMzD3E7"></div>
+      <div class="center" data-page-node-id="kPw2QZ4rF03LBnM1zRm3nc">
+        <div id="phaseTip" class="phase-tip" data-page-node-id="0eexQeFu13PVQIoVeuRPj9"></div>
+      </div>
+      <div id="selfPlayZone" class="self-play-zone" aria-label="自己最近出的牌"></div>
+      <div class="actionbar" id="actionbar" data-page-node-id="I1ceBEHe74eBJKXbJ9Rpy1"></div>
+      <div id="mobileSelfBar" class="mobile-self-bar" aria-label="自己的状态信息"></div>
+    <!-- 局内互动：三个按钮并排（表情 / 道具 / 快捷指令），各管各的独立面板 -->
+    <div class="ia-dock" id="iaDock">
+      <button id="btnEmoji" class="ia-btn" title="发表情"><span class="ia-ico">😀</span><span class="ia-lbl">表情</span></button>
+      <button id="btnItem" class="ia-btn" title="使用道具"><span class="ia-ico">🥚</span><span class="ia-lbl">道具</span></button>
+      <button id="btnChat" class="ia-btn" title="发送快捷指令"><span class="ia-ico ia-ico-chat">💬</span><span class="ia-lbl">快捷</span></button>
+    </div>
+
+    </div>
+    <div class="hand-wrap" data-page-node-id="DHFiuFYaBY5jzzpjPUYZiG">
+      <div class="seat seat-bottom" data-pos="bottom" data-page-node-id="mA8kuXMFFOVV7DwrFK5dCD"></div>
+      <div class="hand" id="hand" data-page-node-id="MPKEZmH4TwUpfWVE7QAUEr"></div>
+    </div>
+
+    <div id="emojiPanel" class="interact-panel ia-panel hidden">
+      <div class="ip-head"><b>表情</b><button class="ip-x" id="ipCloseEmoji">✕</button></div>
+      <div class="ip-hint">发送后显示在自己头像旁</div>
+      <div id="ipEmoji"></div>
+    </div>
+
+    <div id="itemPanel" class="interact-panel ia-panel hidden">
+      <div class="ip-head"><b>道具</b><button class="ip-x" id="ipCloseItem">✕</button></div>
+      <div class="ip-hint">先点道具，再点目标玩家头像</div>
+      <div id="ipItems"></div>
+    </div>
+
+    <div id="chatPanel" class="interact-panel ia-panel hidden">
+      <div class="ip-head"><b>快捷指令</b><button class="ip-x" id="ipCloseChat">✕</button></div>
+      <div class="ip-hint">发送后显示气泡并朗读，每位玩家的口音随机（普通话 / 方言 / English）</div>
+      <div id="ipChat"></div>
+      <div class="ip-custom">
+        <input id="chatCustomInput" maxlength="24" placeholder="自己加一句（回车保存）" />
+        <button id="chatCustomAdd">＋ 添加</button>
+      </div>
+    </div>
+
+    <!-- 声音设置面板已内嵌在顶部栏中（点 🔊 在顶部栏下方展开） -->
+    <div id="targetBar" class="target-bar hidden">
+      <span id="targetHint"></span>
+      <button id="targetCancel">取消</button>
+    </div>
+
+    <div id="fxLayer" class="fx-layer"></div>
+  </div>
+
+  <!-- 房主专用房间设置：等待室和牌桌共用，始终贴在页面右上角 -->
+  <div id="roomSettingsPanel" class="room-settings-panel hidden">
+    <div class="ip-head"><b>房间设置</b><button id="rspClose" class="ip-x">✕</button></div>
+    <div class="settings-grid">
+      <label>叫分时长（5–30 秒）<input id="hsBidTimeout" type="number" min="5" max="30" /></label>
+      <label>明牌/加倍时长（5–30 秒）<input id="hsChoiceTimeout" type="number" min="5" max="30" /></label>
+      <label>出牌时长（5–60 秒）<input id="hsPlayTimeout" type="number" min="5" max="60" /></label>
+      <label>发牌算法<select id="hsDealMode"><option value="enhanced">炸弹增强发牌</option><option value="random">完全随机发牌</option></select></label>
+    </div>
+    <button id="btnSaveRoomSettings" class="primary settings-save">保存设置</button>
+    <div class="settings-note">时长修改从下一次计时起生效；发牌算法从下一局生效。</div>
+    <div class="settings-subtitle">玩家管理</div>
+    <div id="hsPlayers" class="settings-players"></div>
+  </div>
+
+  <!-- 弹窗 -->
+  <div id="modal" class="modal hidden" data-page-node-id="Sj21bfWVctix46yadWXD9H">
+    <div class="modal-box" id="modalBox" data-page-node-id="9HIrUWHIMD1gXhrVpCHYwY"></div>
+  </div>
+
+  <!-- 全局轻提示（复制邀请、错误等） -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/rules.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

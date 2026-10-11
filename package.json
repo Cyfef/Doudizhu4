@@ -1,0 +1,19 @@
+{
+  "name": "doudizhu4",
+  "version": "1.0.0",
+  "description": "欢乐四人斗地主（两副牌·PC网页版·积分不封顶·本地服务器）",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node test/client-integrity.test.js && node test/deal.test.js && node test/playability.test.js && node test/joker-pair.test.js && node test/turn-order.test.js && node test/room-settings.test.js && node test/history-store.test.js && node test/bot.test.js && node test/cooperation.test.js && node test/model-bot.test.js && node test/room-bot.test.js && node test/http-bot.test.js && node test/ui-bot.test.js",
+    "test:client": "node test/client-integrity.test.js",
+    "test:deal": "node test/deal.test.js",
+    "test:ui": "node test/ui-bot.test.js",
+    "test:model": "node test/model-bot.test.js",
+    "test:playability": "node test/playability.test.js",
+    "test:turn": "node test/turn-order.test.js",
+    "test:room": "node test/room-settings.test.js",
+    "test:history": "node test/history-store.test.js"
+  },
+  "license": "MIT"
+}

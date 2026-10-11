@@ -1,0 +1,10 @@
+{
+  "name": "欢乐四人斗地主",
+  "short_name": "四人斗地主",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#d6ecfa",
+  "theme_color": "#d6ecfa"
+}
